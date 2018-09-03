@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+p {
+  color: white !important;
+}
+
+.mscontainer{
+ width:330px;
+ min-height:460px; /*400px or 450*/
+ background:#333;
+ overflow:auto;
+ margin:20px auto;
+ border-radius:10px;
+ box-shadow:0 10px 8px -8px #333;
+ position: scroll;
+ align-items: center; 
+ text-align: center;
+}
+
+.musicimg {
+    align-items: center; 
+    position: absolute;
+    margin-top: 4%;
+    margin-bottom: 0%;
+    width: 300px;
+    height: 300px;
+}
+
+.btn {
+    background-color: black; /*DodgerBlue;*/
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    color: white;
+    padding: 20px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 40px;
+    text-align: right;
+    float: center;
+    overflow: auto;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top: 5%; /*10%*/
+    position: center;
+    align-items: center; 
+    justify-content: center;
+    margin-bottom: 0%;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+    background-color: white;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 90%;
+    margin-top: 2%;
+    height: 6px; /*15px*/
+    border-radius: 5px;
+    background: solid white; /*#4CAF50*/
+    
+    opacity: 1;
+    position: center;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px; /*25px*/
+    height: 20px; /*25px*/
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+img {
+    margin-top: 5%;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.percent {
+    margin-top: 2%;
+    margin-bottom: 0%;
+    margin-left: 75%;
+    margin-right: auto;
+    color: white;
+}
+
+.percentt {
+    margin-top: -8.5%;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: 75%;
+    color: white;
+}
+.audiotitle {
+    overlay: auto;
+    margin-bottom: 4%;
+    margin-top: -2%;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+}
+.audiomaker {
+    overlay: auto;
+    margin-bottom: 2%;
+    margin-top: -5%;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    text-align: center;
+}
+
+.fwdbtn {
+    background-color: DodgerBlue;
+    width: 15px;
+    height: 15px;
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    cursor: pointer;
+    font-size: 22px;
+    border-radius: 30px;
+    text-align: center;
+    float: center;
+    overflow: auto;
+    margin-left: 21%;
+    margin-right:auto;
+    margin-top: -5%; /*10%*/
+    position: absolute;
+    align-items: center; 
+    justify-content: center;
+    margin-bottom: 0%;
+}
+
+/* Darker background on mouse-over */
+.fwdbtn:hover {
+    background-color: RoyalBlue;
+}
+
+.rwdbtn {
+    background-color: DodgerBlue;
+    width: 15px;
+    height: 15px;
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    cursor: pointer;
+    font-size: 22px;
+    border-radius: 30px;
+    text-align: center;
+    float: center;
+    overflow: auto;
+    margin-left: 7%;
+    margin-right: auto;
+    margin-top: -6%; /*10%*/
+    position: absolute;
+    align-items: center; 
+    justify-content: center;
+    margin-bottom: 0%;
+}
+
+/* Darker background on mouse-over */
+.rwdbtn:hover {
+    background-color: RoyalBlue;
+}
+
+.dropbtn {
+    background-color: none;
+    color: white !important;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-left: 80%;
+}
+
+.dropbtn:hover {
+    background-color: none;
+}
+
+.dropdown {
+    position: relative;
+    display: block;
+    align-items: center;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: darkgray;
+    width: 331px;
+    overflow: auto;
+    margin-left: 0%;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 16px 50px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd}
+
+.show {display:block;}
+
+.playlistnames {
+  color: white;
+}
+
+</style>
+<body>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="mscontainer" id="container">
+
+<audio id="myAudio" title="I Like Me Better">
+  <source src="https://iplock.weebly.com/uploads/9/5/7/3/95731436/i_like_me_better__bass_boosted_.m4a">
+</audio>
+<img id="AlbumArt" class=“musicimg” src="https://is4-ssl.mzstatic.com/image/thumb/Music117/v4/c5/5f/e5/c55fe54a-8696-396b-977d-05d6e1000d6b/5056167100188_1.jpg/268x0w.jpg" alt="Trolltunga, Norway" width="250" height="250">
+
+<p id="audiotitle" class="audiotitle"></p>
+<p id="artist" class="audiomaker"></p>
+<p id="currentlbl" class="percent">00:00:00</p>
+<p id="durationlbl" color=“white” class="percentt">00:00:00 </p>
+
+<input type="range" min="0" max="" value="0" class="slider" id="myRange">
+
+<div type="button" onclick="playAudio()" id="button" class="btn"><i class="fa fa-play"></i></div>
+
+<div type="button" onclick="playAudio()" style="visibility:hidden;" id="button2" class="btn"><i class="fa fa-pause"></i></div>
+
+
+<div class="dropdown">
+<button onclick="Dropdown()" class="dropbtn"> •••</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a class="playlistnames" onclick="Playbutton(this.id)" id="1">I Like Me Better</a>
+    <a class="playlistnames" onclick="Playbutton(this.id)" id="2">Silence</a>
+    <a class="playlistnames" onclick="Playbutton(this.id)" id="3">Alone</a>
+    <a class="playlistnames" onclick="Playbutton(this.id)" id="4">Wolves</a>
+    <a class="playlistnames" onclick="Playbutton(this.id)" id="5">Wilson Expensive Mistakes</a>
+    <a class="playlistnames" onclick="Playbutton(this.id)" id="6">Spotlight</a>
+    <a class="playlistnames" onclick="Playbutton(this.id)" id="7">Walk it Talk it</a>
+
+  </div>
+</div>
+
+<script src="https://lanyxsofthtmlcode.weebly.com/uploads/9/5/7/3/95731436/app.js"></script>
+
+</div>
+<script>
+
+function Dropdown() { document.getElementById("myDropdown").classList.toggle("show");
+}
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }}}}
+
+//labels
+
+//buttons
+var input = document.getElementById("button");
+var input2 = document.getElementById("button2");
+//text/labels/numbers
+  //number vals
+var num = 1;
+  //labels
+var audiotitle = document.getElementById("audiotitle");
+var audioartist = document.getElementById("artist");
+var image = document.getElementById("AlbumArt");
+var x = document.getElementById("myAudio"); 
+var percent = document.getElementById("currentlbl");
+//inputslider
+var slider = document.getElementById("myRange");
+
+//percent.innerHTML = x.id;
+audiotitle.innerHTML = x.title;
+
+slider.oninput = function() {
+  percent.innerHTML = this.value + "%";
+  x.currentTime = slider.value;
+}
+
+
+
+
+var i = 1;
+function keys() {
+     
+   if (x.currentTime == x.duration) {
+     //x.src = sources.two;
+     i++;
+     x.title = titles[i];
+     audiotitle.innerHTML = x.title;
+     audioartist.innerHTML = artists[i];
+     image.src = albumart[i];
+    
+     x.src = songs[i];
+     x.play();
+     
+   }
+}
+
+function Playbutton(clicked_id) {
+  i = clicked_id;
+  x.title = titles[i];
+     audiotitle.innerHTML = x.title;
+     audioartist.innerHTML = artists[i];
+     image.src = albumart[i];
+    
+     x.src = songs[i];
+}
+
+
+function startup() {
+    input2.style.display="none";
+}
+startup()
+
+function playAudio() { 
+    x.play();
+    if (num == 1) {
+      x.play();
+      //text.innerHTML = "pause";
+      input.style.display="none";
+      input2.style="visibility:visible;";
+      input2.style.display="block";
+      num = 0;
+    } else {
+      x.pause();
+      //text.innerHTML = "play";
+      input2.style="visibility:hidden;";
+      input2.style.display="none";
+      input.style="visibility:visable;";
+      num = 1;
+      
+      
+    }}
+
+
+    
+window.addEventListener('load', function() {
+  var cur = document.querySelector('#perc'),
+      vid = document.querySelector('#myAudio')
+      dur = document.getElementById("durationlbl");
+      per = document.getElementById("currentlbl");
+})
+    
+myAudio.addEventListener('timeupdate', function(e) {
+  //current time
+  per.textContent = sToTime(e.target.currentTime);
+  //duraion
+  dur.textContent = sToTime(e.target.duration);
+  slider.value = x.currentTime;
+      //percent.innerHTML = x.currentTime;
+      slider.max = x.duration;
+      keys();
+})
+
+function sToTime(t) {
+  return padZero(parseInt((t / (60 * 60)) % 24)) + ":" +
+         padZero(parseInt((t / (60)) % 60)) + ":" + 
+         padZero(parseInt((t) % 60));
+}
+function padZero(v) {
+  return (v < 10) ? "0" + v : v;
+}
+
+
+</script>
+
+</body>
+</html>
