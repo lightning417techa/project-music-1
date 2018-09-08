@@ -102,7 +102,7 @@ img {
 }
 
 .percentt {
-    margin-top: -8.5%;
+    margin-top: -9%;
     margin-bottom: 0%;
     margin-left: auto;
     margin-right: 75%;
@@ -116,7 +116,7 @@ img {
     margin-right: auto;
     color: white;
     text-align: center;
-    font-size: 25px;
+    font-size: 26px;
 }
 .audiomaker {
     overlay: auto;
@@ -129,72 +129,65 @@ img {
 }
 
 .fwdbtn {
-    background-color: DodgerBlue;
-    width: 15px;
-    height: 15px;
+    /*background-color: lime;*/
+    position: center;
+    width: 50px;
+    height: 30px;
     border: none;
     color: white;
-    padding: 15px 15px;
+    float: center;
+    overflow: auto;
     cursor: pointer;
     font-size: 22px;
     border-radius: 30px;
     text-align: center;
     float: center;
     overflow: auto;
-    margin-left: 21%;
-    margin-right:auto;
-    margin-top: -5%; /*10%*/
-    position: absolute;
+    margin-left: auto;
+    margin-right: 20%;
+    margin-top: -13.6%; /*-14*/
+    position: center;
     align-items: center; 
     justify-content: center;
     margin-bottom: 0%;
-}
-
-/* Darker background on mouse-over */
-.fwdbtn:hover {
-    background-color: RoyalBlue;
 }
 
 .rwdbtn {
-    background-color: DodgerBlue;
-    width: 15px;
-    height: 15px;
+    /*background-color: lime;*/
+    position: center;
+    width: 50px;
+    height: 30px;
     border: none;
     color: white;
-    padding: 15px 15px;
     cursor: pointer;
     font-size: 22px;
     border-radius: 30px;
     text-align: center;
     float: center;
     overflow: auto;
-    margin-left: 7%;
+    margin-left: 20%;
     margin-right: auto;
-    margin-top: -6%; /*10%*/
-    position: absolute;
+    margin-top: -8.9%; /*-9.1%%*/
+    position: center;
     align-items: center; 
     justify-content: center;
     margin-bottom: 0%;
 }
 
-/* Darker background on mouse-over */
-.rwdbtn:hover {
-    background-color: RoyalBlue;
-}
-
 .dropbtn {
+    position: -webkit-sticky;
+    position: sticky;
     background-color: none;
-    color: white !important;
+    color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    margin-left: 80%;
+    margin-left: 80%; /*80*/
+margin-top: -11.3%;
 }
 
-.dropbtn:hover {
-    background-color: none;
-}
+.dropbtnpos {margin-left: 35%; cursor: pointer; float: center; overflow: auto;}
 
 .dropdown {
     position: relative;
@@ -205,25 +198,99 @@ img {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: darkgray;
+    background-color: none;
     width: 331px;
     overflow: auto;
     margin-left: 0%;
 }
 
 .dropdown-content a {
-    color: black;
-    padding: 16px 50px;
+    color: white;
+    /*padding: 16px 50px;*/
+    padding: 10px 50px;
     text-decoration: none;
+    text-align: left;
     display: block;
+    border-top: 0.9px solid #9B9898;
 }
 
-.dropdown a:hover {background-color: #ddd}
+.dropdown a:hover {background-color: #ddd; color: black;} /*#ddd*/
+
+.dropdown-content li {list-style: none;}
 
 .show {display:block;}
+.dropbtnclick {color: lime;}
 
 .playlistnames {
   color: white;
+  text-align: left;
+  border: 0.7px solid white;
+}
+
+.Playlistartist {
+  color: lime;
+  text-align: right;
+}
+. Playlistartist:hover {color: white;}
+
+.Containeralert {
+ width:330px;
+ min-height:460px; /*400px or 450*/
+ background-color: darkgray;
+ overflow:auto;
+ margin:20px/auto;
+ border-radius:10px;
+border: none;
+ box-shadow:0 10px 8px -8px #333;
+ position: scroll;
+ align-items: center; 
+ text-align: center;
+ z-index: 232;
+ -webkit-filter: blur(8px);
+}
+.Containeralertext {
+  z-index: 243;
+  overflow: auto;
+}
+
+.shufflebtn {
+    background-color: none;
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 22px;
+    border-radius: 30px;
+    text-align: center;
+    float: center;
+    overflow: auto;
+    margin-left: 26%;
+    margin-right: auto;
+    margin-top: -7%; /*-9.1%%*/
+    align-items: center; 
+    justify-content: center;
+    margin-bottom: 0%;
+}
+
+.simg {
+  width: 50%;
+  height: 50%;
+  margin-right: 50%;
+}
+
+.dropbtn2 {
+    position: -webkit-sticky;
+    position: sticky;
+    background-color: none;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-right: 80%; /*80*/
+margin-bottom: -6.1%;
 }
 
 </style>
@@ -232,11 +299,12 @@ img {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="mscontainer" id="container">
+<div class="Containeralertt" id="alertcon">
 
 <audio id="myAudio" title="I Like Me Better">
   <source src="https://iplock.weebly.com/uploads/9/5/7/3/95731436/i_like_me_better__bass_boosted_.m4a">
 </audio>
-<img id="AlbumArt" class=“musicimg” src="https://is4-ssl.mzstatic.com/image/thumb/Music117/v4/c5/5f/e5/c55fe54a-8696-396b-977d-05d6e1000d6b/5056167100188_1.jpg/268x0w.jpg" alt="Trolltunga, Norway" width="250" height="250">
+<img id="AlbumArt" class=“musicimg” src="https://is4-ssl.mzstatic.com/image/thumb/Music117/v4/c5/5f/e5/c55fe54a-8696-396b-977d-05d6e1000d6b/5056167100188_1.jpg/268x0w.jpg" width="250" height="250">
 
 <p id="audiotitle" class="audiotitle"></p>
 <p id="artist" class="audiomaker"></p>
@@ -249,37 +317,78 @@ img {
 
 <div type="button" onclick="playAudio()" style="visibility:hidden;" id="button2" class="btn"><i class="fa fa-pause"></i></div>
 
+<div type="button" onclick="Shuffle()" id="shufflebutton" class="shufflebtn">sh</div>
+
+<div type="button" onclick="next()" id="fw" class="fwdbtn">>></div>
+
+<div type="button" onclick="rewind()" id="bw" class="rwdbtn"><<</div>
 
 <div class="dropdown">
-<button onclick="Dropdown()" class="dropbtn"> •••</button>
+
+<button onclick="drop()" id="Dropbutton2" class="dropbtn2"> •••</button>
+
+<button onclick="Dropdown()" id="Dropbutton" class="dropbtn"> •••</button>
   <div id="myDropdown" class="dropdown-content">
-    <a class="playlistnames" onclick="Playbutton(this.id)" id="1">I Like Me Better</a>
-    <a class="playlistnames" onclick="Playbutton(this.id)" id="2">Silence</a>
-    <a class="playlistnames" onclick="Playbutton(this.id)" id="3">Alone</a>
-    <a class="playlistnames" onclick="Playbutton(this.id)" id="4">Wolves</a>
-    <a class="playlistnames" onclick="Playbutton(this.id)" id="5">Wilson Expensive Mistakes</a>
-    <a class="playlistnames" onclick="Playbutton(this.id)" id="6">Spotlight</a>
-    <a class="playlistnames" onclick="Playbutton(this.id)" id="7">Walk it Talk it</a>
+    
+    <p class="playlistnames">&nbsp&nbspPlaylist 1</p>
+    <a onclick="Playbutton(this.id)" id="1" song="hello Ridley nelson">I Like Me Better</a>
+    <a onclick="Playbutton(this.id)" id="2">Silence</a>
+    <a onclick="Playbutton(this.id)" id="3">Alone (Spotify extended version)</a>
+    <a onclick="Playbutton(this.id)" id="4">Wolves</a>
+     <a onclick="Playbutton(this.id)" id="5">Wilson Expensive Mistakes</a>
+    <a onclick="Playbutton(this.id)" id="6">Spotlight</a>
+     <a onclick="Playbutton(this.id)" id="7">Walk it Talk it</a>
+    <a onclick="Playbutton(this.id)" id="8">Friends Are Family</a>
+    <a onclick="Playbutton(this.id)" id="9">Imortals</a>
+    <a onclick="Playbutton(this.id)" id="10">Better When I’m Dancin</a>
+    <a onclick="Playbutton(this.id)" id="11">Ode to Sleep</a>
+    <a onclick="Playbutton(this.id)" id="12">Shine Your Way</a>
+    <a onclick="Playbutton(this.id)" id= "13">Fake You Out</a>
+    <a onclick="Playbutton(this.id)" id= "14">Uma Therman</a>
+    <a onclick="Playbutton(this.id)" id= "15">Danger</a>
+    <a onclick="Playbutton(this.id)" id= "16">Rockstar</a>
+    <a onclick="Playbutton(this.id)" id= "17">Thunder</a>
+    <a onclick="Playbutton(this.id)" id= "18">Faded</a>
+
+<li>”DISCLAIMER: We do not claim the rights for making the audio media”</li>
+<code> <img class="simg" src="https://lanyxsofthtmlcode.weebly.com/uploads/9/5/7/3/95731436/p1152.png"></code>
 
   </div>
 </div>
 
 <script src="https://lanyxsofthtmlcode.weebly.com/uploads/9/5/7/3/95731436/app.js"></script>
-
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </div>
+</div>
+
 <script>
 
-function Dropdown() { document.getElementById("myDropdown").classList.toggle("show");
+var btnv = 0;
+function Dropdown() {
+var i = 0;
+if (i == 0) {
+i++;
+document.getElementById("Dropbutton").classList.toggle("dropbtnclick");
+document.getElementById("Dropbutton").classList.toggle("dropbtnpos");
+document.getElementById("myDropdown").classList.toggle("show");
+} else {
+i--;
+document.getElementById("Dropbutton").classList.remove("dropbtnclick");
+}}
+
+function drop() {
 }
-window.onclick = function(event) {
+
+window.onclick = function(event, clicked_id) {
   if (!event.target.matches('.dropbtn')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
       if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }}}}
+        //openDropdown.classList.remove('show');
+       }}}}
 
 //labels
 
@@ -289,25 +398,49 @@ var input2 = document.getElementById("button2");
 //text/labels/numbers
   //number vals
 var num = 1;
+var a = new Date();
+var mt = a.getMonth() + 1;
+var dy = a.getDate();
+var yr = a.getFullYear();
+var tm = a.getHours()+":"+a.getMinutes();
+var dateFormat = mt+"/"+dy+"/"+yr+"_"+tm;
   //labels
 var audiotitle = document.getElementById("audiotitle");
 var audioartist = document.getElementById("artist");
 var image = document.getElementById("AlbumArt");
 var x = document.getElementById("myAudio"); 
 var percent = document.getElementById("currentlbl");
+audiotitle.innerHTML = x.title;
 //inputslider
 var slider = document.getElementById("myRange");
-
-//percent.innerHTML = x.id;
-audiotitle.innerHTML = x.title;
+//Firebase
+var config = {
+    apiKey: "AIzaSyAz0J5c0czjU3S2PddQdFxmnd52hGHqtWQ",
+    authDomain: "fitbit-flex2-integration.firebaseapp.com",
+    databaseURL: "https://fitbit-flex2-integration.firebaseio.com",
+    projectId: "fitbit-flex2-integration",
+    storageBucket: "fitbit-flex2-integration.appspot.com",
+    messagingSenderId: "247113062436"
+  };
+  firebase.initializeApp(config);
 
 slider.oninput = function() {
   percent.innerHTML = this.value + "%";
   x.currentTime = slider.value;
 }
 
+function Shuffle() {
+  var s = Math.floor(Math.random() * 14) + 1;
 
-
+  x.title = titles[s];
+  audiotitle.innerHTML = x.title;
+  audioartist.innerHTML = artists[s];
+  image.src = albumart[s];
+  x.src = songs[s];
+  x.play();
+  num = 1;
+  playAudio();
+}
 
 var i = 1;
 function keys() {
@@ -319,11 +452,34 @@ function keys() {
      audiotitle.innerHTML = x.title;
      audioartist.innerHTML = artists[i];
      image.src = albumart[i];
-    
      x.src = songs[i];
-     x.play();
-     
-   }
+     x.play(); 
+     num = 1;
+     playAudio();
+   }}
+
+function next() {
+     i++;
+     x.title = titles[i];
+     audiotitle.innerHTML = x.title;
+     audioartist.innerHTML = artists[i];
+     image.src = albumart[i];
+     x.src = songs[i];
+     x.play(); 
+     num = 1;
+     playAudio();
+}
+
+function rewind() {
+     i--;
+     x.title = titles[i];
+     audiotitle.innerHTML = x.title;
+     audioartist.innerHTML = artists[i];
+     image.src = albumart[i];
+     x.src = songs[i];
+     x.play(); 
+     num = 1;
+     playAudio();
 }
 
 function Playbutton(clicked_id) {
@@ -332,8 +488,10 @@ function Playbutton(clicked_id) {
      audiotitle.innerHTML = x.title;
      audioartist.innerHTML = artists[i];
      image.src = albumart[i];
-    
      x.src = songs[i];
+     x.play();
+     num = 1;
+     playAudio();
 }
 
 
@@ -351,6 +509,8 @@ function playAudio() {
       input2.style="visibility:visible;";
       input2.style.display="block";
       num = 0;
+      d = dateFormat + "playing";
+      writeNewPost();
     } else {
       x.pause();
       //text.innerHTML = "play";
@@ -358,8 +518,8 @@ function playAudio() {
       input2.style.display="none";
       input.style="visibility:visable;";
       num = 1;
-      
-      
+      d = dateFormat + "paused";
+      writeNewPost();
     }}
 
 
@@ -391,6 +551,29 @@ function padZero(v) {
   return (v < 10) ? "0" + v : v;
 }
 
+//Firebase Function
+var ip;
+$.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?') 
+         .done (function(location) {
+           ip = location.IPv4;
+         });
+
+
+function writeNewPost() {
+      var postData = dateFormat + " IP of Sender " + ip + "_song-" + i;
+     var PostData = {
+       d : "sent from LanyxSoft Music player" };
+     var newPostKey = firebase.database().ref().push().key;
+     var updates = {};
+     updates['/User-inputs/' + newPostKey] = postData;
+     return firebase.database().ref().update(updates);
+    var ref = firebase.database().ref("User-input");
+ref.on("value", function(snapshot) {
+    var childData = snapshot.val();
+    var key = Object.keys(childData)[0];
+    console.log(childData[key].id);
+    var print = document.getElementbyId("print").innerHTML= childData;
+});}
 
 </script>
 
