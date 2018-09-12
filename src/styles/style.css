@@ -55,7 +55,7 @@ p {
 .slider {
     -webkit-appearance: none;
     width: 90%;
-    margin-top: 5%; /*2%*/
+    margin-top: -5%; /*2%*/
     height: 6px; /*15px*/
     border-radius: 5px;
     background: solid white; /*#4CAF50*/
