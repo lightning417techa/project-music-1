@@ -24,6 +24,7 @@ p {
     height: 300px;
 }
 
+/*play/pause button*/
 .btn {
     background-color: black; /*DodgerBlue;*/
     width: 20px;
@@ -39,7 +40,7 @@ p {
     overflow: auto;
     margin-left: auto;
     margin-right:auto;
-    margin-top: 5%; /*10%*/
+    margin-top: 10%; /*10%*/
     position: center;
     align-items: center; 
     justify-content: center;
